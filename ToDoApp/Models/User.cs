@@ -29,5 +29,8 @@ namespace ToDoApp.Models
 
         //One to one relationship with UserProfile
         public UserProfile UserProfile { get; set; }
+
+        //One to many relationship with Todo
+        public ICollection<Todo> Todos { get; set; }
     }
 }
