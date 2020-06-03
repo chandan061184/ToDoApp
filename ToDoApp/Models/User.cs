@@ -26,5 +26,8 @@ namespace ToDoApp.Models
 
         [Required]
         public string Password { get; set; }
+
+        //One to one relationship with UserProfile
+        public UserProfile UserProfile { get; set; }
     }
 }
