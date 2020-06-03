@@ -24,5 +24,10 @@ namespace ToDoApp.Models
         //Many to many relationship
         public ICollection<TodoTag> TodoTags { get; set; }
 
+
+        //Optimistic concurrency
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
     }
 }

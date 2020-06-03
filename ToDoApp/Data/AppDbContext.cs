@@ -34,6 +34,11 @@ namespace ToDoApp.Data
                    .HasOne(tt => tt.Tag)
                    .WithMany(tt => tt.TodoTags)
                    .HasForeignKey(tt => tt.TagId);
+
+            //optimistic concurrency
+            builder.Entity<Todo>()
+                   .Property(p => p.RowVersion)
+                   .IsRowVersion();
         }
     }
 }
