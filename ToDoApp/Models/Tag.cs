@@ -6,23 +6,16 @@ using System.Threading.Tasks;
 
 namespace ToDoApp.Models
 {
-    public class Todo
+    public class Tag
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [MinLength(5)]
-        [MaxLength(192)]
-        public string Title { get; set; }
-        
-        public string Discription { get; set; }
-
-        [Required]        
-        public string Status { get; set; }
+        [MinLength(2)]        
+        public string Name { get; set; }
 
         //Many to many relationship
         public ICollection<TodoTag> TodoTags { get; set; }
-
     }
 }
