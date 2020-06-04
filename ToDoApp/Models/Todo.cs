@@ -19,7 +19,7 @@ namespace ToDoApp.Models
         public string Discription { get; set; }
 
         [Required]        
-        public string Status { get; set; }
+        public bool Status { get; set; }
 
         //Many to many relationship
         public ICollection<TodoTag> TodoTags { get; set; }
@@ -28,6 +28,6 @@ namespace ToDoApp.Models
         //Optimistic concurrency
         [Timestamp]
         public byte[] RowVersion { get; set; }
-
+        public int UserId { get; set; }
     }
 }
